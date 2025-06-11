@@ -7,14 +7,13 @@ function Book(title, author, pages){
     this.pages = pages;
     this.isRead = false;
     this.id = crypto.randomUUID();
-    this.info = function(){
-        return `The '${this.title}' by ${this.author}, ${this.pages} pages, ${this.isRead ? 'has been read' : 'not read yet'}.`;
-    }
 }
 Book.prototype.toggleReadState = function(){
     this.isRead = ! this.isRead;
 };
-
+Book.prototype.info =  function(){
+        return `The '${this.title}' by ${this.author}, ${this.pages} pages, ${this.isRead ? 'has been read' : 'not read yet'}.`;
+    }
 
 const myLibrary = [];
 
@@ -62,7 +61,7 @@ class Model{
     }
     addBook(title, author, pages){
         let book = new Book(title, author, pages);
-        this.library.shift(book);
+        this.library.unshift(book);
         this.onBookUpdate(book);
 
     }
