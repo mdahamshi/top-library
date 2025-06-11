@@ -8,7 +8,7 @@ function Book(title, author, pages){
     this.isRead = false;
     this.id = crypto.randomUUID();
     this.info = function(){
-        return `The ${this.title} by ${this.author}, ${this.pages} pages, ${this.isRead ? 'has been read' : 'not read yet'}.`;
+        return `The '${this.title}' by ${this.author}, ${this.pages} pages, ${this.isRead ? 'has been read' : 'not read yet'}.`;
     }
 }
 Book.prototype.toggleReadState = function(){
@@ -59,6 +59,12 @@ class Model{
     }
     deleteBook(id){
         this.library = this.library.filter(book => book.id !== id);
+    }
+    addBook(title, author, pages){
+        let book = new Book(title, author, pages);
+        this.library.push(book);
+        this.onBookUpdate(book);
+
     }
 
     toggleReadState(id){

@@ -12,6 +12,7 @@ class Controller {
         this.view.bindReadState(this.handleReadState)
         this.model.bindLibraryChanged(this.onLibraryChange);
         this.model.bindUpdateBook(this.onBookUpdate);
+        this.view.bindAddBook(this.handleAddBook);
 
     }
 
@@ -23,7 +24,9 @@ class Controller {
     handleDeleteBook = id => {
         this.model.deleteBook(id);
     }
-
+    handleAddBook = (title, author, pages) => {
+        this.model.addBook(title, author, pages);
+    }
     handleReadState = id => {
         this.model.toggleReadState(id);
     }

@@ -5,8 +5,17 @@ class View{
     constructor(){
         this.library = document.getElementById('library');
 
-
+        this.dialog = document.getElementById('dialog-add-book');
+        let dialog_close = document.getElementById('dialog-close');
+        let new_book = document.getElementById('new-book');
         this.app = this.library;
+
+        dialog_close.addEventListener("click", () => {
+            this.dialog.close();
+        });
+        new_book.addEventListener('click', () => {
+            this.dialog.showModal();
+        })
 
     }
     createBook(book){
@@ -77,11 +86,30 @@ class View{
             }
         });
     }
+    bindAddBook(handler){
+        this.dialog.addEventListener('click', event => {
+            if(event.target.id == 'button-add-book'){
+                event.preventDefault();
+
+                let title = document.getElementById('book-title').value;
+                let author = document.getElementById('book-author').value;
+                let pages = document.getElementById('book-pages').value;
+
+
+                this.dialog.close();
+
+                handler(title, author, pages);
+            }
+        });
+    }
     updateBook(book){
         let old_book = document.getElementById(book.id);
+        let new_book = this.createBook(book);
         if(old_book){
-            let new_book = this.createBook(book);
             this.library.replaceChild(new_book, old_book);
+        }
+        else {
+            this.library.appendChild(new_book);
         }
     }
     bindReadState(handler){
