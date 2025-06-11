@@ -26,12 +26,21 @@ class View{
             title.classList.add('book-title');
 
             const by = document.createElement('p');
-            by.textContent = `By ${book.author}`;
+            by.append('By ');
+
+            const em = document.createElement('em');
+            em.textContent = book.author; // this escapes automatically
+
+            by.append(em);
             by.classList.add('book-author');
+
 
             const pages = document.createElement('p');
             pages.textContent = `${book.pages} pages.`;
             pages.classList.add('book-pages');
+
+            const wrapper = document.createElement('div');
+            wrapper.append(by, pages);
 
             const info = document.createElement('p');
             info.textContent = `${book.info()}`;
@@ -39,7 +48,7 @@ class View{
 
             
 
-            li.append(title, by, pages, info);
+            li.append(title, wrapper, info);
 
 
 

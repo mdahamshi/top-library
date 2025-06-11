@@ -48,4 +48,14 @@ body {
     border-radius: 6px;
     padding: 32px 16px;
     justify-content: space-between;
+    gap: 0;
+}
+.book-pages {
+    margin-bottom: 16px;
+}
+.book-title {
+    margin-bottom: 16px;
+}
+.book-info {
+    font-size: 14px;
 }
