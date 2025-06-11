@@ -54,20 +54,22 @@ class Model{
     bindLibraryChanged(callback){
         this.onLibraryChange = callback;
     }
-
+    bindUpdateBook(callback){
+        this.onBookUpdate = callback;
+    }
     deleteBook(id){
         this.library = this.library.filter(book => book.id !== id);
-        this._refresh(this.library);
     }
 
     toggleReadState(id){
         this.library = this.library.map(book => {
-            if(book.id === id)
+            if(book.id === id){
                 book.toggleReadState();
+                this.onBookUpdate(book);
+            }
             return book;
         });
 
-        this._refresh(this.library);
     }
 }
 

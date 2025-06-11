@@ -11,6 +11,7 @@ class Controller {
         this.view.bindDeleteBook(this.handleDeleteBook);
         this.view.bindReadState(this.handleReadState)
         this.model.bindLibraryChanged(this.onLibraryChange);
+        this.model.bindUpdateBook(this.onBookUpdate);
 
     }
 
@@ -29,6 +30,9 @@ class Controller {
 
     onLibraryChange = library =>{
         this.view.displayLibrary(library);
+    }
+    onBookUpdate = book => {
+        this.view.updateBook(book);
     }
 }
 const TOPLib = {
