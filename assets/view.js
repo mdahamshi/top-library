@@ -109,7 +109,7 @@ class View{
             this.library.replaceChild(new_book, old_book);
         }
         else {
-            this.library.appendChild(new_book);
+            this.library.insertBefore(new_book, this.library.firstChild);
         }
     }
     bindReadState(handler){
