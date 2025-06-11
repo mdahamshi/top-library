@@ -62,7 +62,7 @@ class Model{
     }
     addBook(title, author, pages){
         let book = new Book(title, author, pages);
-        this.library.push(book);
+        this.library.shift(book);
         this.onBookUpdate(book);
 
     }
