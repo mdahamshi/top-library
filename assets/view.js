@@ -55,7 +55,9 @@ class View{
         const toolbar = document.createElement('div');
         toolbar.book_id = book.id;
         toolbar.classList.add('book-toolbar', 'flex-row');
+        let hidden = book.isRead ? '' : 'hidden';
         toolbar.innerHTML = `
+        <img id="book-read-check" class="${hidden}" src="assets/img/check-all.svg" alt="">
         <img id="book-read" src="assets/img/eye-plus-outline.svg" alt="">
         <img id="book-delete" src="assets/img/delete-circle.svg" alt="">
         `;
