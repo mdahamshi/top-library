@@ -48,12 +48,38 @@ class View{
 
             
 
-            li.append(title, wrapper, info);
-
+            
+            const toolbar = document.createElement('div');
+            toolbar.id = book.id;
+            toolbar.classList.add('book-toolbar', 'flex-row');
+            toolbar.innerHTML = `
+            <img id="book-read" src="assets/img/eye-plus-outline.svg" alt="">
+            <img id="book-delete" src="assets/img/delete-circle.svg" alt="">
+            `;
+            
+            li.append(title, wrapper, info, toolbar);
 
 
             this.library.appendChild(li);
 
+        });
+    }
+
+    bindDeleteBook(handler){
+        this.library.addEventListener('click', event => {
+            if(event.target.id === 'book-delete'){
+                const id = event.target.parentElement.id;
+                handler(id);
+            }
+        });
+    }
+
+    bindReadState(handler){
+        this.library.addEventListener('click', event => {
+            if(event.target.id === 'book-read'){
+                const id = event.target.parentElement.id;
+                handler(id);
+            }
         });
     }
 }

@@ -11,6 +11,9 @@ function Book(title, author, pages){
         return `The ${this.title} by ${this.author}, ${this.pages} pages, ${this.isRead ? 'has been read' : 'not read yet'}.`;
     }
 }
+Book.prototype.toggleReadState = function(){
+    this.isRead = ! this.isRead;
+};
 
 
 const myLibrary = [];
@@ -43,8 +46,29 @@ class Model{
     constructor(){
         this.library = myLibrary;
 
+        this.addBookToLibrary = addBookToLibrary;
+    }
+    _refresh(library){
+        this.onLibraryChange(library);
+    }
+    bindLibraryChanged(callback){
+        this.onLibraryChange = callback;
     }
 
+    deleteBook(id){
+        this.library = this.library.filter(book => book.id !== id);
+        this._refresh(this.library);
+    }
+
+    toggleReadState(id){
+        this.library = this.library.map(book => {
+            if(book.id === id)
+                book.toggleReadState();
+            return book;
+        });
+
+        this._refresh(this.library);
+    }
 }
 
 

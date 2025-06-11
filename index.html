@@ -4,11 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="./assets/css/fontawesome.css">
+    <link rel="stylesheet" href="./assets/css/solid.min.css">
+    <link rel="stylesheet" href="./assets/css/regular.min.css">
     <title>Library App</title>
 </head>
 <body>
 
     <div id="content">
+           <div class="header sb-shadow">
+            <div class="header-top flex-row">
+                <div class="search-box flex-row">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" name="search" id="search">
+                </div>
+                <div class="user-menu flex-row">
+                    <i class="fa-regular fa-bell"></i>
+                    <img src="./assets/img/woman.png" alt="avatart" class="avatar">
+                    <p>Sarah Dahamshi</p>
+                </div>
+            </div>
+
+            <div class="header-bottom flex-row">
+                <div class="left-side flex-row">
+                    <img src="./assets/img/woman.png" alt="avatart" class="avatar">
+                    <div class="greeting">
+                        <p>Hi there,</p>
+                        <h2>Sarah Dahamshi (@sarah)</h2>
+                    </div>
+
+                </div>
+
+                <div class="right-side flex-row">
+                    <button id="new-book">New</button>
+                </div>
+            </div>
+        </div>
+
         <ul id="library">
 
         </ul>
@@ -16,8 +48,8 @@
     
     <!-- <script type="module" src="./assets/model.js"></script> -->
     <!-- <script type="module" src="./assets/view.js"></script> -->
-    <script type="module" src="assets/index.js">
-        import {TOPLib} from './assets/index.js'
+    <script type="module" src="assets/controller.js">
+        import {TOPLib} from './assets/controller.js'
         document.TOPLib = TOPLib; 
 
     </script>
