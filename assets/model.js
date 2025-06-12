@@ -1,3 +1,5 @@
+import { generateID } from "./utils.js";
+
 function Book(title, author, pages){
     if(!new.target)
         throw Error("You muse use new to call this function !");
@@ -6,7 +8,7 @@ function Book(title, author, pages){
     this.author = author;
     this.pages = pages;
     this.isRead = false;
-    this.id = crypto.randomUUID();
+    this.id = generateID('library');
 }
 Book.prototype.toggleReadState = function(){
     this.isRead = ! this.isRead;
