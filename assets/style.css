@@ -193,7 +193,7 @@ button {
 }
 .footer {
     justify-content: center;
-    padding: 24px;
+    padding: 10px;
 }
 @media only screen and (min-width: 700px) {
     .dialog-modal {
