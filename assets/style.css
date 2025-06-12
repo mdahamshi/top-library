@@ -39,6 +39,9 @@ body {
     flex: 1 1 auto;
 
 }
+#content .header-top {
+    display: none;
+}
 .header .header-bottom, .header .header-top {
     justify-content: space-between;
 }
@@ -130,6 +133,18 @@ button {
     font-weight: bold;
     font-size: 14px;
 }
+#new-book {
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 70px;
+    height: 70px;
+    font-size: 45px;
+    font-weight: bold;
+    z-index: 10000;
+}
+
 .form-row {
     display: flex;
     flex-direction: column;
@@ -202,5 +217,8 @@ button {
     .book {
         max-height: 300px;
         max-width: 300px;
+    }
+    #content .header-top {
+        display: flex;
     }
 }
