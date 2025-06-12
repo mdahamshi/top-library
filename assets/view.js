@@ -59,7 +59,7 @@ class View{
         toolbar.innerHTML = `
         <img id="book-read-check" class="${hidden}" src="assets/img/check-all.svg" alt="">
         <img id="book-read" src="assets/img/eye-plus-outline.svg" alt="">
-        <img id="book-delete" src="assets/img/delete-circle.svg" alt="">
+        <i id="book-delete" class="fa-regular fa-trash-can"></i>
         `;
         
         li.append(title, wrapper, info, toolbar);
