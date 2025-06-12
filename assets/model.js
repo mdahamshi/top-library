@@ -25,6 +25,7 @@ function addBookToLibrary(title, author, pages){
 }
 
 const sampleData = [
+    ['بابا بحب سارة وسلمى', 'بابا', '314'],
     ['Emotional Intelegence', 'Daniel Golman', '298'],
     ['The Prince', 'David Laren', '321'],
     ['Happy Life', 'Sarah Dahamshi', '234'],
