@@ -1,4 +1,4 @@
-import {sb_utils} from "./utils.js";
+import {sb_utils as sb} from "./utils.js";
 
 class View{
     constructor(){
@@ -15,7 +15,7 @@ class View{
         new_book.addEventListener('click', () => {
             this.dialog.showModal();
         })
-        sb_utils.addCopyRight('Library');
+        sb.addCopyRight('Library');
 
     }
     createBook(book){
