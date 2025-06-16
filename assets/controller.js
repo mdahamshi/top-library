@@ -1,4 +1,4 @@
-import {addBookToLibrary, myLibrary, Model} from './model.js'
+import {Model} from './model.js'
 import {View} from './view.js'
 
 class Controller {
@@ -38,11 +38,6 @@ class Controller {
         this.view.updateBook(book);
     }
 }
-const TOPLib = {
-    addBookToLibrary,
-    myLibrary
-};
+
 
 new Controller(new Model(), new View());
-document.TOPLib = TOPLib;
-export {TOPLib}
